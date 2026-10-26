@@ -1,0 +1,76 @@
+# Cloud and hosting ASNs: the networks whose visits are servers, not people.
+#
+# This is the policy. `realvisits refresh` reads it, looks each ASN up in a public IP-to-ASN
+# dataset, and writes datacenter_nets.txt with every IPv4 range those ASNs hold. The Classifier
+# reads only datacenter_nets.txt.
+#
+# To add a provider, add its ASN(s) to a copy of this file with a label and run
+# `realvisits refresh --asns <your copy> --out <dir>`.
+# Keep out CDN and consumer-VPN networks that front real people (Cloudflare 13335, for one):
+# a visitor behind one of those is a person, and the user agent or referrer still catches a bot
+# that hides there.
+#
+# Format: one "<asn> <label>" per line. Comments start with #.
+
+16509 AWS
+14618 AWS
+38895 AWS
+7224 AWS
+8987 AWS
+16514 AWS
+396982 GCP
+395973 GCP
+396981 GCP
+139070 GCP
+19527 Google
+15169 Google
+8075 Azure
+8068 Azure
+8069 Azure
+8070 Azure
+8071 Azure
+12076 Azure
+31898 OracleCloud
+7160 OracleCloud
+14061 DigitalOcean
+393406 DigitalOcean
+205448 DigitalOcean
+24940 Hetzner
+213230 Hetzner
+16276 OVH
+35540 OVH
+63949 Linode
+48163 Linode
+20473 Vultr
+12876 Scaleway
+51167 Contabo
+60781 Leaseweb
+28753 Leaseweb
+395954 Leaseweb
+19148 Leaseweb
+45102 Alibaba
+37963 Alibaba
+134963 Alibaba
+132203 Tencent
+45090 Tencent
+136907 HuaweiCloud
+55990 HuaweiCloud
+9009 M247
+40676 Psychz
+8100 QuadraNet
+47583 Hostinger
+8560 IONOS
+199524 GCore
+202422 GCore
+202053 UpCloud
+219502 Stormcloud
+197540 Netcup
+60068 DataCamp
+62240 Clouvider
+51852 Stark
+210644 AEZA
+56971 OneProvider
+63023 GTHost
+53667 FranTech
+25820 ITL
+29802 HostVirtual

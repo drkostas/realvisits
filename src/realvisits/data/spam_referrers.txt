@@ -1,0 +1,35 @@
+# Referrer-spam hosts: a visit whose referrer host is one of these, or a subdomain of one, is a bot.
+#
+# Matched on the referrer's host only, so a page that merely mentions the string is not caught.
+# `realvisits refresh --spam` merges a public referrer-spam blocklist into a copy of this file.
+# The seed below is a set of long-standing offenders.
+#
+# Format: one host per line, no scheme, lower case. Comments start with #.
+
+soku.com
+squikoo.com
+semalt.com
+buttons-for-website.com
+buttons-for-your-website.com
+darodar.com
+econom.co
+ilovevitaly.com
+ilovevitaly.co
+priceg.com
+cenoval.ru
+descargar-musica-gratis.net
+simple-share-buttons.com
+free-share-buttons.com
+best-seo-offer.com
+best-seo-solution.com
+get-free-traffic-now.com
+googlsucks.com
+7makemoneyonline.com
+trafficmonetize.org
+trafficmonetizer.org
+success-seo.com
+videos-for-your-business.com
+share-buttons.xyz
+social-buttons.com
+4webmasters.org
+guardlink.org

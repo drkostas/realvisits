@@ -6,10 +6,15 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ vars.RUNS_ON || 'ubuntu-latest' }}
+    # the oldest supported Python and the newest; ubuntu-latest (26.04) has no 3.9 build
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: ["3.9", "3.12"]
+        include:
+          - python-version: "3.9"
+            os: ubuntu-24.04
+          - python-version: "3.14"
+            os: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6

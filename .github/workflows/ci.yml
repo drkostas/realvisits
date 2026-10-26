@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ vars.RUNS_ON || 'ubuntu-latest' }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.9", "3.12"]

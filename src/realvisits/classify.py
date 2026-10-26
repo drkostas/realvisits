@@ -88,17 +88,17 @@ class Ranges:
 
     def __init__(self, ranges: Iterable[tuple[int, int]] = ()):
         pairs = sorted(ranges)
-        self.los = [lo for lo, _ in pairs]
-        self.his = [hi for _, hi in pairs]
+        self.lows = [lo for lo, _ in pairs]
+        self.highs = [hi for _, hi in pairs]
 
     def __len__(self) -> int:
-        return len(self.los)
+        return len(self.lows)
 
     def contains(self, value: int) -> bool:
-        if value <= 0 or not self.los:
+        if value <= 0 or not self.lows:
             return False
-        i = bisect.bisect_right(self.los, value) - 1
-        return 0 <= i < len(self.los) and self.los[i] <= value <= self.his[i]
+        i = bisect.bisect_right(self.lows, value) - 1
+        return 0 <= i < len(self.lows) and self.lows[i] <= value <= self.highs[i]
 
     @classmethod
     def read(cls, path: Path) -> "Ranges":
